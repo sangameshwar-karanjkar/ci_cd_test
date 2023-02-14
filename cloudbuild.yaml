@@ -1,14 +1,15 @@
 steps:
-  - name: 'gcr.io/springer-nature-analytics/custom/beam_python:v1-custom'
+  - name: 'python:3.7-stretch'
     args:
       - bash
       - -c
       - |
         apt-get update
         apt-get install -y git
+        pip install apache-beam[gcp]
         git clone https://github.com/sangameshwar-karanjkar/ci_cd_test.git
 
-  - name: 'gcr.io/springer-nature-analytics/custom/beam_python:v1-custom'
+  - name: 'python:3.7-stretch'
     args:
       - bash
       - -c
